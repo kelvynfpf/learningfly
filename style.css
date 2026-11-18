@@ -113,7 +113,14 @@ body.auth .shell { grid-template-columns: minmax(0, 1fr); }
 
 /* ---------- Página inicial ---------- */
 .hero { padding: 4rem 0 2rem; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2.5rem; align-items: end; }
 .hero h1 { max-width: 17ch; }
+.shelf { display: flex; align-items: flex-end; gap: 4px; padding: 0 .5rem; border-bottom: 8px solid var(--ink); }
+.spine { flex: 0 0 34px; height: var(--h); background: var(--area); color: var(--on); border-radius: 4px 4px 0 0; text-decoration: none; display: flex; align-items: center; justify-content: center; padding: .6rem 0; transition: transform .25s var(--ease); box-shadow: inset -3px 0 0 rgba(0,0,0,.14), inset 2px 0 0 rgba(255,255,255,.16); }
+.spine:hover, .spine:focus-visible { transform: translateY(-10px); }
+.spine-title { writing-mode: vertical-rl; transform: rotate(180deg); font-family: var(--font-head); font-weight: 700; font-size: .9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-height: 100%; }
+.spine:nth-child(6) { transform: rotate(3deg); transform-origin: bottom left; margin-left: 4px; }
+.spine:nth-child(6):hover { transform: rotate(3deg) translateY(-10px); }
 .hero .lead { max-width: 52ch; }
 .area-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .area-list li { border-bottom: 1px solid var(--line); }
@@ -366,12 +373,16 @@ a.lesson-row:hover { background: var(--sunk); }
   .shell { grid-template-columns: minmax(0, 1fr); }
   .shell > .sidebar { display: none; }
   .topbar .brand, .topbar .menu-btn { display: inline-flex; }
-  .split, .course-head, .lesson-layout { grid-template-columns: minmax(0, 1fr); }
+  .split, .course-head, .lesson-layout, .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .shelf { justify-content: center; }
   .anim { max-width: 360px; }
 }
 @media (max-width: 720px) {
   .page { padding: 0 1rem; }
   .hero { padding: 2.25rem 0 1.25rem; }
+  .spine { flex-basis: 26px; }
+  .spine-title { font-size: .78rem; }
+  .shelf { gap: 3px; padding: 0; }
   .area-list a { grid-template-columns: auto minmax(0, 1fr) auto; row-gap: .1rem; }
   .area-name { grid-column: 2; }
   .area-line { grid-column: 2; grid-row: 2; font-size: .95rem; }
