@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Segurança da Informação: por onde começar | LearningFly</title>
+  <meta name="description" content="Proteger pessoas, sistemas e dados. O que faz, vídeo, primeiros passos e aulas gratuitas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040" aria-current="page"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<article class="page area-page" style="--area:#CF4040">
+  <header class="area-head">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>Comece aqui</p>
+    <h1>Segurança da Informação</h1>
+    <p class="lead">Proteger pessoas, sistemas e dados.</p>
+    
+    <nav class="jump" aria-label="Nesta página">
+      <a href="#o-que-e">O que é</a>
+      <a href="#video">Vídeo</a>
+      <a href="#trilha">Primeiros passos</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#cursos">Cursos</a>
+    </nav>
+    
+  </header>
+
+  
+  <section id="o-que-e" class="split" aria-labelledby="t-oque">
+    <div>
+      <h2 id="t-oque">O que é</h2>
+      <p>Segurança da informação protege três coisas: o sigilo dos dados (só quem pode vê), a integridade (ninguém altera sem permissão) e a disponibilidade (o sistema funciona quando precisa).</p><p>A área tem dois lados: quem defende (monitora, corrige falhas, responde a incidentes) e quem testa ataques de forma autorizada para achar falhas antes dos criminosos.</p>
+      <p class="muted">Combina com quem é curioso, desconfiado no bom sentido e gosta de entender como as coisas quebram.</p>
+    </div>
+    <figure class="anim anim-seguranca">
+      <svg viewBox="0 0 320 180" role="img" aria-labelledby="anim-t"><title id="anim-t">Tentativas de acesso chegam a um escudo e são bloqueadas antes de alcançar os dados.</title>
+  <path class="ln dash" d="M20 60H150M20 90H150M20 120H150"/>
+  <circle class="ink sg-p1" cx="24" cy="60" r="7"/><circle class="ink sg-p2" cx="24" cy="90" r="7"/><circle class="ink sg-p3" cx="24" cy="120" r="7"/>
+  <g class="sg-shield"><path class="ac o3" d="M190 30l44 16v34c0 30-20 50-44 60-24-10-44-30-44-60V46z"/><path class="acs" d="M190 30l44 16v34c0 30-20 50-44 60-24-10-44-30-44-60V46z" fill="none" stroke-width="3"/>
+  <rect class="ac" x="176" y="84" width="28" height="22" rx="4"/><path class="acs" d="M182 84v-8a8 8 0 0116 0v8" fill="none" stroke-width="3"/></g>
+  <text x="270" y="94">dados</text>
+</svg>
+<figcaption>Segurança é barrar o acesso indevido sem atrapalhar quem tem permissão.</figcaption>
+
+    </figure>
+  </section>
+
+  
+  <section class="block" aria-labelledby="t-dia">
+    <h2 id="t-dia">No dia a dia</h2>
+    <ul class="daily"><li>Acompanhar alertas e investigar acessos estranhos.</li><li>Aplicar atualizações e corrigir configurações inseguras.</li><li>Orientar pessoas contra golpes como phishing.</li><li>Responder a incidentes e registrar o que aconteceu.</li></ul>
+  </section>
+  
+
+  
+  <section id="video" class="block" aria-labelledby="t-video">
+    <h2 id="t-video">Entenda em poucos minutos</h2>
+    <div class="video">
+  <div class="video-box" data-video="CmRtR9SzpZE">
+    <button type="button" class="video-play" aria-label="Assistir: Como começar em cibersegurança do zero">
+      <span class="play-icon" aria-hidden="true"><i class="bi bi-play-fill"></i></span>
+      <span class="video-label">Como começar em cibersegurança do zero</span>
+    </button>
+  </div>
+  <p class="video-meta">Daniel Donda, cerca de 9 min. <a class="text-link" href="https://www.youtube.com/watch?v=CmRtR9SzpZE" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a></p>
+</div>
+<script>
+  /* O vídeo só carrega quando a pessoa pede, para a página abrir rápido. */
+  document.querySelectorAll(".video-box:not([data-ready])").forEach(function (box) {
+    box.setAttribute("data-ready", "1");
+    box.querySelector("button").addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + box.getAttribute("data-video") + "?autoplay=1&rel=0";
+      f.title = this.getAttribute("aria-label");
+      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.allowFullscreen = true;
+      box.innerHTML = "";
+      box.appendChild(f);
+    });
+  });
+</script>
+
+    
+  </section>
+  
+
+  <section id="trilha" class="block" aria-labelledby="t-trilha">
+    <h2 id="t-trilha">Primeiros passos</h2>
+    <p class="muted">Faça na ordem. Cada etapa termina com algo feito por você.</p>
+    <ol class="trail">
+      
+      <li>
+        <h3>Conceitos de segurança</h3>
+        <p>Faça o curso gratuito da Cisco e o módulo 0 do Curso em Vídeo. Aprenda o que são ameaça, vulnerabilidade e risco.</p>
+        <p class="care"><strong>Atenção:</strong> Segurança é base, não ferramenta. Entenda os conceitos antes de baixar programas de &quot;hacker&quot;.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-introducao-a-ciberseguranca-cisco.html">Introdução à Cibersegurança (Cisco)</a> <span class="muted">Curso, em português</span></li><li><a href="curso-seguranca-da-informacao-modulo-0-curso-em-video.html">Segurança da Informação: módulo 0 (Curso em Vídeo)</a> <span class="muted">Curso, em português</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Redes</h3>
+        <p>Entenda IP, portas, DNS e HTTP. Sem isso não dá para entender ataque nem defesa.</p>
+        <p class="care"><strong>Atenção:</strong> Use o Wireshark só na sua própria rede, para ver o tráfego.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-redes-de-computadores-curso-em-video.html">Redes de Computadores (Curso em Vídeo)</a> <span class="muted">Curso, em português</span></li><li><a href="ferramenta-wireshark.html">Wireshark</a> <span class="muted">Ferramenta</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Linux e terminal</h3>
+        <p>Crie uma máquina virtual Linux e pratique comandos, usuários e permissões.</p>
+        <p class="care"><strong>Atenção:</strong> Permissão errada em arquivo é uma falha de segurança comum.</p>
+        
+        <ul class="trail-links">
+          <li><a href="ferramenta-oracle-virtualbox.html">Oracle VirtualBox</a> <span class="muted">Ferramenta</span></li><li><a href="curso-linux-journey.html">Linux Journey</a> <span class="muted">Curso</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Proteja o que é seu</h3>
+        <p>Ative verificação em duas etapas nas suas contas, use gerenciador de senhas e revise permissões dos seus apps.</p>
+        <p class="care"><strong>Atenção:</strong> Comece aplicando em você o que vai recomendar para os outros.</p>
+        
+      </li>
+      
+      <li>
+        <h3>Pratique em ambiente legal</h3>
+        <p>Use laboratórios feitos para estudo e participe de desafios (CTF) para iniciantes.</p>
+        <p class="care"><strong>Atenção:</strong> Testar sistema dos outros sem autorização é crime no Brasil (Lei 12.737/2012). Só pratique onde é permitido.</p>
+        
+      </li>
+      
+    </ol>
+  </section>
+
+  <section class="block two" aria-label="Cuidados e meta">
+    <div><h2>Evite no começo</h2><ul class="plain"><li>Atacar sistemas sem autorização escrita.</li><li>Pular redes e Linux para ir direto às ferramentas.</li><li>Achar que segurança é só antivírus.</li></ul></div>
+    <div><h2>Meta para o primeiro mês</h2><p class="goal">Em 30 dias: suas contas com verificação em duas etapas, o curso da Cisco concluído e um resumo dos conceitos de ameaça, vulnerabilidade e risco.</p></div>
+  </section>
+  
+
+  
+  <section id="aulas" class="block" aria-labelledby="t-aulas">
+    <h2 id="t-aulas">Aulas para praticar</h2>
+    <p class="muted">Escritas pela equipe do LearningFly, com exercício e teste rápido no fim.</p>
+    <ol class="lessons">
+      
+      <li><a href="aprender-confidencialidade-integridade-e-disponibilidade.html"><span class="lesson-title">Confidencialidade, integridade e disponibilidade</span><span class="muted">A tríade que define o que a segurança protege, e a diferença entre ameaça, vulnerabilidade e risco.</span><span class="lesson-time">7 min</span></a></li>
+      
+      <li><a href="aprender-phishing-e-engenharia-social.html"><span class="lesson-title">Phishing e engenharia social</span><span class="muted">Os golpes mais comuns exploram pessoas, não máquinas. Aprenda os sinais.</span><span class="lesson-time">6 min</span></a></li>
+      
+      <li><a href="aprender-senhas-verificacao-em-duas-etapas-e-menor-privilegio.html"><span class="lesson-title">Senhas, verificação em duas etapas e menor privilégio</span><span class="muted">Três práticas que evitam a maioria dos incidentes do dia a dia.</span><span class="lesson-time">6 min</span></a></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section id="cursos" class="block" aria-labelledby="t-cursos">
+    <h2 id="t-cursos">Cursos gratuitos</h2>
+    <p class="muted">2 cursos. Os em português aparecem primeiro.</p>
+    <ul class="rows"><li class="row-item" style="--area:#CF4040">
+  <div class="row-main">
+    <a class="row-title" href="curso-introducao-a-ciberseguranca-cisco.html">Introdução à Cibersegurança (Cisco)</a>
+    <p class="row-desc">Curso on-line gratuito da Cisco, em português, sobre segurança digital pessoal e os principais riscos que as empresas enfrentam.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag tag-pt">Em português</span>
+    <span>Cisco Networking Academy</span>
+    <span>Iniciante</span>
+    
+  </p>
+</li>
+<li class="row-item" style="--area:#CF4040">
+  <div class="row-main">
+    <a class="row-title" href="curso-seguranca-da-informacao-modulo-0-curso-em-video.html">Segurança da Informação: módulo 0 (Curso em Vídeo)</a>
+    <p class="row-desc">Introdução à segurança da informação, do zero. O curso continua em mais quatro módulos no mesmo site.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag tag-pt">Em português</span>
+    <span>Curso em Vídeo (Gustavo Guanabara)</span>
+    <span>Iniciante</span>
+    
+  </p>
+</li>
+</ul>
+  </section>
+  
+
+  
+
+  
+  <footer class="review">
+    <p><span class="tag tag-pending">Em verificação</span> Texto escrito pela equipe a partir das fontes abaixo. Falta a revisão de alguém da área.</p>
+    <p class="muted">Fontes: <a class="text-link" href="https://www.netacad.com/courses/introduction-to-cybersecurity?courseLang=pt-BR" target="_blank" rel="noopener noreferrer">Introdução à Cibersegurança (Cisco Networking Academy)</a>.</p>
+  </footer>
+  
+</article>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly: por onde começar em tecnologia, com aulas próprias e cursos gratuitos conferidos pela equipe.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040" aria-current="page"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

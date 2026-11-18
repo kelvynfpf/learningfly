@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casos de teste: partições e valores limite | LearningFly</title>
+  <meta name="description" content="Duas técnicas para testar menos casos e achar mais defeitos.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9" aria-current="page"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<article class="page reading" style="--area:#1AA1C9">
+  <a class="crumb" href="area-qa.html#aulas"><i class="bi bi-arrow-left" aria-hidden="true"></i> QA / Testes de Software</a>
+  <header class="reading-head">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>Aula 2 de 3, 8 min</p>
+    <h1>Casos de teste: partições e valores limite</h1>
+    <p class="lead">Duas técnicas para testar menos casos e achar mais defeitos.</p>
+  </header>
+
+  
+  <section class="reading-block">
+    <h2>O cenário</h2>
+    <p>Um cadastro aceita idades de 18 a 60 anos. Testar todas as idades é desperdício. Usamos técnicas para escolher poucos valores que representam todos.</p>
+    
+    
+    
+  </section>
+  
+  <section class="reading-block">
+    <h2>Partição de equivalência</h2>
+    <p>Divida as entradas em grupos que o sistema trata do mesmo jeito e teste um valor de cada grupo.</p>
+    
+    
+    <div class="table-wrap"><table class="guide-table">
+      <thead><tr><th scope="col">Grupo</th><th scope="col">Exemplo de valor</th><th scope="col">Resultado esperado</th></tr></thead>
+      <tbody><tr><th scope="row">Menor que 18</th><td>10</td><td>Recusa</td></tr><tr><th scope="row">De 18 a 60</th><td>35</td><td>Aceita</td></tr><tr><th scope="row">Maior que 60</th><td>70</td><td>Recusa</td></tr></tbody>
+    </table></div>
+    
+    
+  </section>
+  
+  <section class="reading-block">
+    <h2>Valor limite</h2>
+    <p>Erros costumam estar nas bordas, como quando o programador escreve &gt; em vez de &gt;=. Teste os valores no limite e logo ao lado: 17, 18, 60 e 61.</p>
+    
+    
+    
+  </section>
+  
+  <section class="reading-block">
+    <h2>Um caso de teste completo</h2>
+    
+    <ul class="bullets"><li>Título: cadastro com idade no limite mínimo.</li><li>Pré-condição: estar na tela de cadastro.</li><li>Passos: preencher os campos obrigatórios e a idade 18; clicar em Cadastrar.</li><li>Resultado esperado: cadastro concluído e mensagem de sucesso.</li></ul>
+    
+    
+  </section>
+  
+
+  
+  <section class="exercise" aria-labelledby="t-ex">
+    <h2 id="t-ex">Exercício</h2>
+    <p>Um campo de senha aceita de 8 a 20 caracteres. Liste as partições e os valores limite e escreva quatro casos de teste completos.</p>
+  </section>
+  
+
+  
+  <section class="quiz" aria-labelledby="t-quiz">
+    <h2 id="t-quiz">Teste rápido</h2>
+    <p class="muted">Escolha uma resposta em cada pergunta. A correção aparece na hora.</p>
+    
+    <fieldset class="question" data-answer="0">
+      <legend>1. Para idades de 18 a 60, quais são valores limite?</legend>
+      
+      <label><input type="radio" name="q1" value="0"> 17, 18, 60, 61</label>
+      
+      <label><input type="radio" name="q1" value="1"> 1, 50, 100</label>
+      
+      <label><input type="radio" name="q1" value="2"> 20, 30, 40</label>
+      
+      <p class="feedback" aria-live="polite" hidden></p>
+      <p class="why" hidden>Os limites e seus vizinhos imediatos.</p>
+    </fieldset>
+    
+    <fieldset class="question" data-answer="1">
+      <legend>2. A partição de equivalência serve para...</legend>
+      
+      <label><input type="radio" name="q2" value="0"> Testar todos os valores</label>
+      
+      <label><input type="radio" name="q2" value="1"> Testar um representante de cada grupo</label>
+      
+      <label><input type="radio" name="q2" value="2"> Escrever código</label>
+      
+      <p class="feedback" aria-live="polite" hidden></p>
+      <p class="why" hidden>Cada grupo é tratado igual, então um valor representa o grupo.</p>
+    </fieldset>
+    
+    <fieldset class="question" data-answer="0">
+      <legend>3. O que não pode faltar num caso de teste?</legend>
+      
+      <label><input type="radio" name="q3" value="0"> Resultado esperado</label>
+      
+      <label><input type="radio" name="q3" value="1"> Cor da tela</label>
+      
+      <label><input type="radio" name="q3" value="2"> Nome do desenvolvedor</label>
+      
+      <p class="feedback" aria-live="polite" hidden></p>
+      <p class="why" hidden>Sem resultado esperado não dá para saber se passou.</p>
+    </fieldset>
+    
+    <p class="score" aria-live="polite"></p>
+  </section>
+  
+
+  <footer class="review">
+    <p><span class="tag tag-pending">Em verificação</span> Aula escrita pela equipe. Falta a revisão de alguém da área.</p>
+    <p class="muted">Fontes: <a class="text-link" href="https://bstqb.online/files/syllabus_ctfl_4.0br.pdf" target="_blank" rel="noopener noreferrer">Syllabus CTFL 4.0 em português (BSTQB)</a>.</p>
+  </footer>
+
+  <nav class="pager" aria-label="Outras aulas">
+    <a href="aprender-por-que-testar-e-os-sete-principios.html"><small>Aula anterior</small>Por que testar e os sete princípios</a>
+    <a class="next" href="aprender-como-relatar-um-bug.html"><small>Próxima aula</small>Como relatar um bug</a>
+  </nav>
+</article>
+<script>
+  document.querySelectorAll(".question").forEach(function (fs) {
+    var right = fs.getAttribute("data-answer");
+    fs.addEventListener("change", function (e) {
+      var ok = e.target.value === right;
+      var fb = fs.querySelector(".feedback");
+      fb.hidden = false;
+      fb.textContent = ok ? "Certo." : "Ainda não. A resposta certa está marcada.";
+      fs.classList.toggle("is-right", ok);
+      fs.classList.toggle("is-wrong", !ok);
+      fs.querySelectorAll("input").forEach(function (i) {
+        i.disabled = true;
+        if (i.value === right) i.parentNode.classList.add("correct");
+      });
+      fs.querySelector(".why").hidden = false;
+      var done = document.querySelectorAll(".question.is-right, .question.is-wrong").length;
+      var total = document.querySelectorAll(".question").length;
+      if (done === total) {
+        document.querySelector(".score").textContent = "Você acertou " + document.querySelectorAll(".question.is-right").length + " de " + total + ".";
+      }
+    });
+  });
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = b.parentNode.querySelector("code").innerText;
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { b.textContent = "Copiado"; setTimeout(function () { b.textContent = "Copiar"; }, 1800); });
+    });
+  });
+</script>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly: por onde começar em tecnologia, com aulas próprias e cursos gratuitos conferidos pela equipe.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9" aria-current="page"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

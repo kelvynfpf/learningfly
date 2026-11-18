@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dados e BI: por onde começar | LearningFly</title>
+  <meta name="description" content="Transformar dados em respostas para decisões. O que faz, vídeo, primeiros passos e aulas gratuitas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F" aria-current="page"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<article class="page area-page" style="--area:#6F8A1F">
+  <header class="area-head">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>Comece aqui</p>
+    <h1>Dados e BI</h1>
+    <p class="lead">Transformar dados em respostas para decisões.</p>
+    
+    <nav class="jump" aria-label="Nesta página">
+      <a href="#o-que-e">O que é</a>
+      <a href="#video">Vídeo</a>
+      <a href="#trilha">Primeiros passos</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#cursos">Cursos</a>
+    </nav>
+    
+  </header>
+
+  
+  <section id="o-que-e" class="split" aria-labelledby="t-oque">
+    <div>
+      <h2 id="t-oque">O que é</h2>
+      <p>A área de dados coleta, organiza e analisa informações para responder perguntas do negócio: quanto vendemos, por que os clientes cancelam, o que deve acontecer no mês que vem.</p><p>BI (Business Intelligence) é a parte que entrega essas respostas em relatórios e painéis. Quem começa costuma entrar como analista de dados, usando planilhas, SQL e ferramentas como o Power BI.</p>
+      <p class="muted">Combina com quem gosta de números, de investigar e de contar o que descobriu.</p>
+    </div>
+    <figure class="anim anim-dados">
+      <svg viewBox="0 0 320 180" role="img" aria-labelledby="anim-t"><title id="anim-t">Barras de um gráfico crescem e a maior fica em destaque.</title>
+  <path class="ln" d="M40 150H290M40 20V150"/>
+  <rect class="ink o3 dt-bar b1" x="60" y="100" width="30" height="50"/><rect class="ink o3 dt-bar b2" x="105" y="80" width="30" height="70"/><rect class="ac dt-bar b3" x="150" y="40" width="30" height="110"/><rect class="ink o3 dt-bar b4" x="195" y="90" width="30" height="60"/><rect class="ink o3 dt-bar b5" x="240" y="70" width="30" height="80"/>
+  <text x="165" y="32" text-anchor="middle" class="dt-label">maior venda</text>
+</svg>
+<figcaption>Dados organizados viram uma resposta que se vê de relance.</figcaption>
+
+    </figure>
+  </section>
+
+  
+  <section class="block" aria-labelledby="t-dia">
+    <h2 id="t-dia">No dia a dia</h2>
+    <ul class="daily"><li>Entender a pergunta da área que pediu a análise.</li><li>Buscar dados com SQL e limpar o que veio errado ou faltando.</li><li>Montar gráficos e painéis no Power BI ou em planilhas.</li><li>Explicar o resultado em linguagem simples.</li></ul>
+  </section>
+  
+
+  
+  <section id="video" class="block" aria-labelledby="t-video">
+    <h2 id="t-video">Entenda em poucos minutos</h2>
+    <div class="video">
+  <div class="video-box" data-video="vENfcQ5HSq0">
+    <button type="button" class="video-play" aria-label="Assistir: Profissão Analista de Dados – Tudo O Que Você Precisa Saber">
+      <span class="play-icon" aria-hidden="true"><i class="bi bi-play-fill"></i></span>
+      <span class="video-label">Profissão Analista de Dados – Tudo O Que Você Precisa Saber</span>
+    </button>
+  </div>
+  <p class="video-meta">Canal TI, cerca de 4 min. <a class="text-link" href="https://www.youtube.com/watch?v=vENfcQ5HSq0" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a></p>
+</div>
+<script>
+  /* O vídeo só carrega quando a pessoa pede, para a página abrir rápido. */
+  document.querySelectorAll(".video-box:not([data-ready])").forEach(function (box) {
+    box.setAttribute("data-ready", "1");
+    box.querySelector("button").addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + box.getAttribute("data-video") + "?autoplay=1&rel=0";
+      f.title = this.getAttribute("aria-label");
+      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.allowFullscreen = true;
+      box.innerHTML = "";
+      box.appendChild(f);
+    });
+  });
+</script>
+
+    
+  </section>
+  
+
+  <section id="trilha" class="block" aria-labelledby="t-trilha">
+    <h2 id="t-trilha">Primeiros passos</h2>
+    <p class="muted">Faça na ordem. Cada etapa termina com algo feito por você.</p>
+    <ol class="trail">
+      
+      <li>
+        <h3>Entenda o trabalho com dados</h3>
+        <p>Faça o curso introdutório da Fundação Bradesco ou o módulo da Microsoft. Os dois são em português e curtos.</p>
+        <p class="care"><strong>Atenção:</strong> Guarde a ideia central: análise começa com uma pergunta, não com uma ferramenta.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-introducao-a-analise-de-dados-microsoft-power-bi.html">Introdução à Análise de Dados: Microsoft Power BI</a> <span class="muted">Curso, em português</span></li><li><a href="curso-explorar-o-processo-de-analise-de-dados.html">Explorar o processo de análise de dados</a> <span class="muted">Curso, em português</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Planilhas</h3>
+        <p>Domine filtros, tabelas dinâmicas, PROCV/PROCX e gráficos numa planilha com dados públicos.</p>
+        <p class="care"><strong>Atenção:</strong> Planilha bem organizada tem uma linha por registro e uma coluna por informação.</p>
+        
+      </li>
+      
+      <li>
+        <h3>SQL</h3>
+        <p>Aprenda SELECT, WHERE, GROUP BY e JOIN praticando no navegador.</p>
+        <p class="care"><strong>Atenção:</strong> SQL é a ferramenta que mais aparece em vagas de dados.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-sqlbolt.html">SQLBolt</a> <span class="muted">Curso</span></li><li><a href="curso-curso-de-mysql-curso-em-video.html">Curso de MySQL (Curso em Vídeo)</a> <span class="muted">Curso, em português</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Power BI</h3>
+        <p>Instale o Power BI Desktop (gratuito, Windows) e monte um painel com três gráficos que respondem a uma pergunta.</p>
+        <p class="care"><strong>Atenção:</strong> Menos gráficos, mais claros. Todo painel deve responder algo.</p>
+        
+      </li>
+      
+      <li>
+        <h3>Projeto com dados públicos</h3>
+        <p>Escolha um conjunto de dados do portal dados.gov.br, faça uma pergunta e responda com um painel e um texto curto.</p>
+        <p class="care"><strong>Atenção:</strong> Conte de onde vieram os dados e o que eles não mostram.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-python-3-mundo-1-curso-em-video.html">Python 3: Mundo 1 (Curso em Vídeo)</a> <span class="muted">Curso, em português</span></li>
+        </ul>
+        
+      </li>
+      
+    </ol>
+  </section>
+
+  <section class="block two" aria-label="Cuidados e meta">
+    <div><h2>Evite no começo</h2><ul class="plain"><li>Fazer gráfico bonito que não responde nenhuma pergunta.</li><li>Confiar nos dados sem conferir duplicados e vazios.</li><li>Pular SQL achando que planilha basta.</li></ul></div>
+    <div><h2>Meta para o primeiro mês</h2><p class="goal">Em 30 dias: um painel com dados públicos respondendo uma pergunta, com um parágrafo explicando o resultado.</p></div>
+  </section>
+  
+
+  
+  <section id="aulas" class="block" aria-labelledby="t-aulas">
+    <h2 id="t-aulas">Aulas para praticar</h2>
+    <p class="muted">Escritas pela equipe do LearningFly, com exercício e teste rápido no fim.</p>
+    <ol class="lessons">
+      
+      <li><a href="aprender-dado-informacao-e-a-pergunta-certa.html"><span class="lesson-title">Dado, informação e a pergunta certa</span><span class="muted">Análise começa com uma pergunta. Conheça os quatro tipos de análise.</span><span class="lesson-time">6 min</span></a></li>
+      
+      <li><a href="aprender-sql-para-analise-select-where-e-group-by.html"><span class="lesson-title">SQL para análise: SELECT, WHERE e GROUP BY</span><span class="muted">As consultas que mais aparecem no dia a dia de quem analisa dados.</span><span class="lesson-time">9 min</span></a></li>
+      
+      <li><a href="aprender-o-grafico-certo-para-cada-pergunta.html"><span class="lesson-title">O gráfico certo para cada pergunta</span><span class="muted">Barras, linhas, números grandes e tabelas: quando usar cada um.</span><span class="lesson-time">6 min</span></a></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section id="cursos" class="block" aria-labelledby="t-cursos">
+    <h2 id="t-cursos">Cursos gratuitos</h2>
+    <p class="muted">2 cursos. Os em português aparecem primeiro.</p>
+    <ul class="rows"><li class="row-item" style="--area:#6F8A1F">
+  <div class="row-main">
+    <a class="row-title" href="curso-introducao-a-analise-de-dados-microsoft-power-bi.html">Introdução à Análise de Dados: Microsoft Power BI</a>
+    <p class="row-desc">Curso de 5 horas sem pré-requisitos: o que é análise de dados, o que faz um analista e os primeiros passos no Power BI.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag tag-pt">Em português</span>
+    <span>Fundação Bradesco (Escola Virtual)</span>
+    <span>Iniciante</span>
+    
+  </p>
+</li>
+<li class="row-item" style="--area:#6F8A1F">
+  <div class="row-main">
+    <a class="row-title" href="curso-explorar-o-processo-de-analise-de-dados.html">Explorar o processo de análise de dados</a>
+    <p class="row-desc">Módulo curto em português sobre os tipos de análise, as funções em uma equipe de dados e as tarefas que levam do dado bruto ao relatório.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag tag-pt">Em português</span>
+    <span>Microsoft Learn</span>
+    <span>Iniciante</span>
+    
+  </p>
+</li>
+</ul>
+  </section>
+  
+
+  
+
+  
+  <footer class="review">
+    <p><span class="tag tag-pending">Em verificação</span> Texto escrito pela equipe a partir das fontes abaixo. Falta a revisão de alguém da área.</p>
+    <p class="muted">Fontes: <a class="text-link" href="https://www.ev.org.br/cursos/introducao-a-analise-de-dados-microsoft-power-bi" target="_blank" rel="noopener noreferrer">Introdução à Análise de Dados: Microsoft Power BI (Fundação Bradesco)</a>; <a class="text-link" href="https://learn.microsoft.com/pt-br/training/modules/data-analytics-microsoft/" target="_blank" rel="noopener noreferrer">Explorar o processo de análise de dados (Microsoft Learn)</a>.</p>
+  </footer>
+  
+</article>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly: por onde começar em tecnologia, com aulas próprias e cursos gratuitos conferidos pela equipe.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F" aria-current="page"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>

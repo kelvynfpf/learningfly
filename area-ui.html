@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI Design: por onde começar | LearningFly</title>
+  <meta name="description" content="Desenhar telas claras, bonitas e consistentes. O que faz, vídeo, primeiros passos e aulas gratuitas.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B" aria-current="page"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<article class="page area-page" style="--area:#C2569B">
+  <header class="area-head">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>Comece aqui</p>
+    <h1>UI Design</h1>
+    <p class="lead">Desenhar telas claras, bonitas e consistentes.</p>
+    
+    <nav class="jump" aria-label="Nesta página">
+      <a href="#o-que-e">O que é</a>
+      <a href="#video">Vídeo</a>
+      <a href="#trilha">Primeiros passos</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#cursos">Cursos</a>
+    </nav>
+    
+  </header>
+
+  
+  <section id="o-que-e" class="split" aria-labelledby="t-oque">
+    <div>
+      <h2 id="t-oque">O que é</h2>
+      <p>UI Design (design de interface) cuida da parte visível do produto: layout, cores, tipografia, ícones, botões e estados como erro, carregando e vazio.</p><p>UI anda junto com UX. UX descobre o que a pessoa precisa e como o fluxo deve ser; UI transforma isso em telas fáceis de ler e usar, organizadas em componentes que o time reaproveita.</p>
+      <p class="muted">Combina com quem tem olho para detalhe visual e gosta de organizar elementos com capricho.</p>
+    </div>
+    <figure class="anim anim-ui">
+      <svg viewBox="0 0 320 180" role="img" aria-labelledby="anim-t"><title id="anim-t">Um wireframe cinza se transforma numa tela com cores, texto e botão.</title>
+  <rect class="bg ln" x="90" y="10" width="140" height="160" rx="14"/>
+  <g class="ui-wire"><rect class="ink o2" x="106" y="30" width="108" height="50" rx="6"/><rect class="ink o3" x="106" y="92" width="80" height="8" rx="4"/><rect class="ink o3" x="106" y="108" width="100" height="6" rx="3"/><rect class="ink o2" x="106" y="136" width="108" height="20" rx="6"/></g>
+  <g class="ui-styled"><rect class="ac o3" x="106" y="30" width="108" height="50" rx="10"/><circle class="ac" cx="160" cy="55" r="12"/><rect class="ink" x="106" y="92" width="80" height="9" rx="4"/><rect class="ink o5" x="106" y="108" width="100" height="6" rx="3"/><rect class="ac" x="106" y="136" width="108" height="22" rx="11"/></g>
+</svg>
+<figcaption>Do wireframe à interface: hierarquia, cor e componentes deixam a tela clara.</figcaption>
+
+    </figure>
+  </section>
+
+  
+  <section class="block" aria-labelledby="t-dia">
+    <h2 id="t-dia">No dia a dia</h2>
+    <ul class="daily"><li>Desenhar telas no Figma a partir de wireframes.</li><li>Criar e manter componentes e guias de estilo (design system).</li><li>Conferir contraste, tamanho de toque e legibilidade.</li><li>Entregar as telas para o front-end com medidas e estados.</li></ul>
+  </section>
+  
+
+  
+  <section id="video" class="block" aria-labelledby="t-video">
+    <h2 id="t-video">Entenda em poucos minutos</h2>
+    <div class="video">
+  <div class="video-box" data-video="1ZKxhQmc0gA">
+    <button type="button" class="video-play" aria-label="Assistir: Qual a diferença entre UI e UX design?">
+      <span class="play-icon" aria-hidden="true"><i class="bi bi-play-fill"></i></span>
+      <span class="video-label">Qual a diferença entre UI e UX design?</span>
+    </button>
+  </div>
+  <p class="video-meta">She is a Creative | UI UX, cerca de 11 min. <a class="text-link" href="https://www.youtube.com/watch?v=1ZKxhQmc0gA" target="_blank" rel="noopener noreferrer">Abrir no YouTube</a></p>
+</div>
+<script>
+  /* O vídeo só carrega quando a pessoa pede, para a página abrir rápido. */
+  document.querySelectorAll(".video-box:not([data-ready])").forEach(function (box) {
+    box.setAttribute("data-ready", "1");
+    box.querySelector("button").addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + box.getAttribute("data-video") + "?autoplay=1&rel=0";
+      f.title = this.getAttribute("aria-label");
+      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.allowFullscreen = true;
+      box.innerHTML = "";
+      box.appendChild(f);
+    });
+  });
+</script>
+
+    
+  </section>
+  
+
+  <section id="trilha" class="block" aria-labelledby="t-trilha">
+    <h2 id="t-trilha">Primeiros passos</h2>
+    <p class="muted">Faça na ordem. Cada etapa termina com algo feito por você.</p>
+    <ol class="trail">
+      
+      <li>
+        <h3>Fundamentos visuais</h3>
+        <p>Estude hierarquia, alinhamento, espaçamento, cor e tipografia. Pegue um app que você usa e descreva por que cada tela funciona ou não.</p>
+        <p class="care"><strong>Atenção:</strong> Comece com poucos tamanhos de letra e poucas cores. Excesso confunde.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-roteiro-de-ui-design-techguide.html">Roteiro de UI Design (TechGuide)</a> <span class="muted">Curso, em português</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Figma do básico aos componentes</h3>
+        <p>Crie conta gratuita e aprenda frames, auto layout e componentes refazendo uma tela de login.</p>
+        <p class="care"><strong>Atenção:</strong> Nomeie camadas e componentes. Arquivo bagunçado atrapalha o time.</p>
+        
+        <ul class="trail-links">
+          <li><a href="ferramenta-figma.html">Figma</a> <span class="muted">Ferramenta</span></li><li><a href="curso-figma-design-para-iniciantes.html">Figma Design para iniciantes</a> <span class="muted">Curso</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Siga um sistema</h3>
+        <p>Leia o Material Design 3 e use as regras dele num projeto pequeno: grade, cores e componentes.</p>
+        <p class="care"><strong>Atenção:</strong> Não precisa inventar tudo. Sistemas de design existem para você reaproveitar.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-material-design-3.html">Material Design 3</a> <span class="muted">Curso</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Estados e acessibilidade</h3>
+        <p>Para cada tela, desenhe também os estados de erro, carregando e vazio. Confira o contraste do texto.</p>
+        <p class="care"><strong>Atenção:</strong> Texto pequeno e cinza claro é o erro mais comum de quem começa.</p>
+        
+        <ul class="trail-links">
+          <li><a href="curso-checklist-de-acessibilidade.html">Checklist de acessibilidade</a> <span class="muted">Curso</span></li>
+        </ul>
+        
+      </li>
+      
+      <li>
+        <h3>Entrega para o desenvolvimento</h3>
+        <p>Prepare um arquivo com telas, componentes e anotações e revise com o checklist de handoff.</p>
+        <p class="care"><strong>Atenção:</strong> Tela que não dá para programar não chega ao usuário.</p>
+        
+        <ul class="trail-links">
+          <li><a href="guia-checklist-de-entrega-de-ui-e-handoff.html">Checklist de entrega de UI e handoff</a> <span class="muted">Guia</span></li>
+        </ul>
+        
+      </li>
+      
+    </ol>
+  </section>
+
+  <section class="block two" aria-label="Cuidados e meta">
+    <div><h2>Evite no começo</h2><ul class="plain"><li>Usar muitas fontes e cores na mesma tela.</li><li>Desenhar só o caminho feliz, sem erro e sem estado vazio.</li><li>Copiar tendências visuais sem pensar no usuário.</li></ul></div>
+    <div><h2>Meta para o primeiro mês</h2><p class="goal">Em 30 dias: um guia de estilo simples (cores, tipos, botões) e três telas de um app usando esses componentes.</p></div>
+  </section>
+  
+
+  
+  <section id="aulas" class="block" aria-labelledby="t-aulas">
+    <h2 id="t-aulas">Aulas para praticar</h2>
+    <p class="muted">Escritas pela equipe do LearningFly, com exercício e teste rápido no fim.</p>
+    <ol class="lessons">
+      
+      <li><a href="aprender-hierarquia-visual-o-que-se-ve-primeiro.html"><span class="lesson-title">Hierarquia visual: o que se vê primeiro</span><span class="muted">Tamanho, peso, cor e espaço decidem a ordem em que a pessoa lê a tela.</span><span class="lesson-time">6 min</span></a></li>
+      
+      <li><a href="aprender-cor-contraste-e-tipografia.html"><span class="lesson-title">Cor, contraste e tipografia</span><span class="muted">Regras simples para uma tela legível: contraste mínimo, poucas fontes e uma escala de tamanhos.</span><span class="lesson-time">8 min</span></a></li>
+      
+      <li><a href="aprender-componentes-e-estados.html"><span class="lesson-title">Componentes e estados</span><span class="muted">Botões, campos e cards são peças reutilizáveis. Cada um precisa de todos os seus estados desenhados.</span><span class="lesson-time">7 min</span></a></li>
+      
+    </ol>
+  </section>
+  
+
+  
+  <section id="cursos" class="block" aria-labelledby="t-cursos">
+    <h2 id="t-cursos">Cursos gratuitos</h2>
+    <p class="muted">3 cursos. Os em português aparecem primeiro.</p>
+    <ul class="rows"><li class="row-item" style="--area:#C2569B">
+  <div class="row-main">
+    <a class="row-title" href="curso-roteiro-de-ui-design-techguide.html">Roteiro de UI Design (TechGuide)</a>
+    <p class="row-desc">Mapa de carreira de UI Design em três níveis, feito pela Alura. Serve para saber o que estudar primeiro e o que vem depois.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag tag-pt">Em português</span>
+    <span>Alura TechGuide</span>
+    <span>Iniciante</span>
+    
+  </p>
+</li>
+<li class="row-item" style="--area:#C2569B">
+  <div class="row-main">
+    <a class="row-title" href="curso-figma-design-para-iniciantes.html">Figma Design para iniciantes</a>
+    <p class="row-desc">Curso do próprio Figma, feito em torno de um projeto prático: criar um site de portfólio do zero.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag">Inglês</span>
+    <span>Figma</span>
+    <span>Iniciante</span>
+    
+  </p>
+</li>
+<li class="row-item" style="--area:#C2569B">
+  <div class="row-main">
+    <a class="row-title" href="curso-material-design-3.html">Material Design 3</a>
+    <p class="row-desc">Sistema de design do Google, com orientações de UX, componentes e ferramentas. Útil para entender como um sistema de design é organizado.</p>
+  </div>
+  <p class="row-meta">
+    <span class="tag">Inglês</span>
+    <span>Google</span>
+    <span>Intermediário</span>
+    <span class="tag tag-pending">Em verificação</span>
+  </p>
+</li>
+</ul>
+  </section>
+  
+
+  
+  <section class="block two" aria-label="Ferramentas e guias">
+    <div><h2>Ferramentas</h2><ul class="plain"><li><a class="text-link" href="ferramenta-figma.html">Figma</a></li><li><a class="text-link" href="ferramenta-adobe-xd.html">Adobe XD</a></li></ul></div>
+    <div><h2>Guias</h2><ul class="plain"><li><a class="text-link" href="guia-checklist-de-entrega-de-ui-e-handoff.html">Checklist de entrega de UI e handoff</a></li></ul></div>
+  </section>
+  
+
+  
+  <footer class="review">
+    <p><span class="tag tag-pending">Em verificação</span> Texto escrito pela equipe a partir das fontes abaixo. Falta a revisão de alguém da área.</p>
+    <p class="muted">Fontes: <a class="text-link" href="https://www.nngroup.com/articles/definition-user-experience/" target="_blank" rel="noopener noreferrer">The Definition of User Experience (NN/g)</a>; <a class="text-link" href="https://m3.material.io/" target="_blank" rel="noopener noreferrer">Material Design 3 (Google)</a>.</p>
+  </footer>
+  
+</article>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly: por onde começar em tecnologia, com aulas próprias e cursos gratuitos conferidos pela equipe.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B" aria-current="page"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
