@@ -294,6 +294,20 @@ body.auth .shell { grid-template-columns: minmax(0, 1fr); }
 .why { margin-left: .7rem; color: var(--ink-soft); }
 .score { font-family: var(--font-head); font-weight: 700; font-size: var(--s1); }
 
+/* ---------- Bloco de anotações ---------- */
+.notes { margin: 1.5rem 0; padding: 1.25rem 0 .5rem; border-top: 1px solid var(--line); }
+.notes-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.notes h2 { font-size: var(--s1); }
+.notes-status { font-size: .9rem; }
+.notes-text { width: 100%; max-width: 46rem; display: block; min-height: 9rem; padding: .8rem 1rem; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--ink); font: inherit; line-height: 1.55; resize: vertical; }
+.notes-text:focus { outline: 3px solid var(--focus); outline-offset: 1px; }
+.notes-actions { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: .75rem; }
+.notes-clear { color: var(--ink-soft); text-decoration: underline; min-height: 44px; }
+.notes-summary { margin-top: 1.25rem; padding: 1.1rem 1.25rem; border-radius: var(--radius); background: var(--sunk); max-width: 46rem; }
+.notes-summary h3 { font-size: 1.15rem; }
+.notes-summary h4 { font-size: 1rem; margin: .9rem 0 .3rem; font-family: var(--font-body); font-weight: 700; }
+.notes-summary ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .25rem; }
+
 /* ---------- Curso, etapa, ferramenta, guia ---------- */
 .crumb { display: inline-flex; align-items: center; gap: .4rem; text-decoration: none; font-weight: 700; color: var(--ink-soft); margin-top: 1.75rem; }
 .crumb:hover { color: var(--ink); }
