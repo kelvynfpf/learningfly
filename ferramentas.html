@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ferramentas e instalação | LearningFly</title>
+  <meta name="description" content="Ferramentas gratuitas de design, mobile, infraestrutura e banco de dados, com guia para instalar e testar.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" style="color:var(--shelf-ink)" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly
+</a>
+
+<h2 class="side-title">Áreas de TI</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ux.html" style="--area:#E0527F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">UX/UI Design</span>
+      <span class="side-count"><span class="visually-hidden">9 cursos</span><span aria-hidden="true">9</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-front.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Front-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-back.html" style="--area:#2E9E6F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Back-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-mobile.html" style="--area:#8C63E0">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Mobile</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-po.html" style="--area:#EB6A34">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">PO / Gestão de Produto</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-qa.html" style="--area:#1AA1C9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">QA / Testes de Software</span>
+      <span class="side-count"><span class="visually-hidden">4 cursos</span><span aria-hidden="true">4</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-infra.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Infraestrutura + DBA</span>
+      <span class="side-count"><span class="visually-hidden">16 cursos</span><span aria-hidden="true">16</span></span>
+    </a>
+  </li>
+  
+</ul>
+
+<h2 class="side-title">Para praticar</h2>
+<ul class="side-nav">
+  <li>
+    <a class="side-link" href="guias.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Guias e roteiros</span>
+      <span class="side-count"><span class="visually-hidden">5 guias</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  <li>
+    <a class="side-link" href="ferramentas.html" style="--area:#4F73D9" aria-current="page">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Ferramentas e instalação</span>
+      <span class="side-count"><span class="visually-hidden">23 ferramentas</span><span aria-hidden="true">23</span></span>
+    </a>
+  </li>
+</ul>
+
+<h2 class="side-title">Outras áreas</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ia.html" style="--area:#6B7A90">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Inteligência Artificial</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-idiomas.html" style="--area:#B08A3E">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Idiomas</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="cursos.html" style="--area:#A9B4CA">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Todos os cursos</span>
+      <span class="side-count"><span class="visually-hidden">53 cursos</span><span aria-hidden="true">53</span></span>
+    </a>
+  </li>
+</ul>
+
+<div class="side-foot"><p style="color:var(--shelf-soft);font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<div class="page" style="--area:#6B7A90;--on:#FFFFFF">
+  <header class="page-head">
+    <span class="area-icon" aria-hidden="true"><i class="bi bi-wrench-adjustable"></i></span>
+    <h1>Ferramentas e instalação</h1>
+    <p>23 ferramentas gratuitas, com passos para instalar e testar. Baixe sempre pelo site oficial.</p>
+  </header>
+
+  
+  <section class="section pt-0" aria-labelledby="grupo-ux">
+    <h2 id="grupo-ux" class="mb-3">Design e prototipação</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Design de interfaces</span>
+    <h3><a href="ferramenta-figma.html">Figma</a></h3>
+    <p>Cria telas, componentes e protótipos clicáveis no navegador, com várias pessoas no mesmo arquivo.</p>
+    <div class="course-meta">
+      <span class="chip">Plano Starter gratuito, com limites.</span>
+      <span class="chip">Auto layout: Shift + A</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Design de interfaces</span>
+    <h3><a href="ferramenta-adobe-xd.html">Adobe XD</a></h3>
+    <p>Programa da Adobe para telas e protótipos. Útil para entender projetos antigos feitos nele.</p>
+    <div class="course-meta">
+      <span class="chip">Produto da Adobe. Confira as condições no site.</span>
+      <span class="chip">Modo de manutenção</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+    </div>
+  </section>
+  
+  <section class="section pt-0" aria-labelledby="grupo-mobile">
+    <h2 id="grupo-mobile" class="mb-3">Desenvolvimento mobile</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#8C63E0">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Ambiente para Android</span>
+    <h3><a href="ferramenta-android-studio.html">Android Studio</a></h3>
+    <p>Ambiente oficial do Google para criar apps Android, com editor, emulador e ferramentas de teste.</p>
+    <div class="course-meta">
+      <span class="chip">Gratuito. É preciso aceitar o contrato de licença do Android SDK.</span>
+      <span class="chip">Emulador incluído</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#8C63E0">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Framework multiplataforma</span>
+    <h3><a href="ferramenta-flutter.html">Flutter</a></h3>
+    <p>Cria apps para Android e iOS com a linguagem Dart e quase o mesmo código.</p>
+    <div class="course-meta">
+      <span class="chip">Gratuito e de código aberto.</span>
+      <span class="chip">flutter doctor</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#8C63E0">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Framework multiplataforma</span>
+    <h3><a href="ferramenta-expo-react-native.html">Expo (React Native)</a></h3>
+    <p>Cria apps para Android e iOS com JavaScript ou TypeScript e React. O Expo Go deixa testar no próprio celular.</p>
+    <div class="course-meta">
+      <span class="chip">Gratuito. Conta Expo gratuita para testar em iPhone.</span>
+      <span class="chip">npx create-expo-app</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#8C63E0">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Teste de APIs</span>
+    <h3><a href="ferramenta-postman.html">Postman</a></h3>
+    <p>Envia requisições HTTP e mostra a resposta, para testar uma API antes de ligar o app a ela.</p>
+    <div class="course-meta">
+      <span class="chip">Plano Free: US$ 0, para 1 pessoa.</span>
+      <span class="chip">Plano Free, 1 pessoa</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#8C63E0">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Login, banco de dados e arquivos</span>
+    <h3><a href="ferramenta-firebase.html">Firebase</a></h3>
+    <p>Serviços do Google para login, banco de dados, arquivos e avisos do app, sem montar um servidor.</p>
+    <div class="course-meta">
+      <span class="chip">Plano Spark sem custo, com cotas.</span>
+      <span class="chip">Spark: sem cartão</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#8C63E0">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Banco de dados PostgreSQL e login</span>
+    <h3><a href="ferramenta-supabase.html">Supabase</a></h3>
+    <p>Banco PostgreSQL na nuvem com login de usuários, arquivos e API pronta.</p>
+    <div class="course-meta">
+      <span class="chip">Plano gratuito, com limites.</span>
+      <span class="chip">500 MB, 2 projetos</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+    </div>
+  </section>
+  
+  <section class="section pt-0" aria-labelledby="grupo-infra">
+    <h2 id="grupo-infra" class="mb-3">Infraestrutura e nuvem</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Virtualização local</span>
+    <h3><a href="ferramenta-oracle-virtualbox.html">Oracle VirtualBox</a></h3>
+    <p>Cria máquinas virtuais no seu computador para testar sistemas sem mexer no que já está instalado.</p>
+    <div class="course-meta">
+      <span class="chip">GPLv3 (programa). O Extension Pack tem licença própria.</span>
+      <span class="chip">Rede NAT ou Bridge</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Contêineres</span>
+    <h3><a href="ferramenta-docker.html">Docker</a></h3>
+    <p>Empacota uma aplicação com tudo o que ela precisa, para rodar igual em qualquer computador.</p>
+    <div class="course-meta">
+      <span class="chip">Docker Engine: Apache 2.0. Docker Desktop: gratuito para estudo e pequenas empresas.</span>
+      <span class="chip">WSL 2</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Simulação de redes</span>
+    <h3><a href="ferramenta-cisco-packet-tracer.html">Cisco Packet Tracer</a></h3>
+    <p>Simula roteadores, switches e computadores para praticar configuração de redes sem equipamento físico.</p>
+    <div class="course-meta">
+      <span class="chip">Gratuito com conta da Cisco Networking Academy.</span>
+      <span class="chip">Switch 2960</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Análise de tráfego</span>
+    <h3><a href="ferramenta-wireshark.html">Wireshark</a></h3>
+    <p>Mostra os pacotes que passam pela sua placa de rede, para entender protocolos e achar problemas.</p>
+    <div class="course-meta">
+      <span class="chip">GPLv2.</span>
+      <span class="chip">Filtros: icmp, dns</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Acesso remoto (SSH)</span>
+    <h3><a href="ferramenta-putty.html">PuTTY</a></h3>
+    <p>Conecta em servidores remotos pelo terminal, usando SSH.</p>
+    <div class="course-meta">
+      <span class="chip">MIT.</span>
+      <span class="chip">Porta 22</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Monitoramento</span>
+    <h3><a href="ferramenta-zabbix.html">Zabbix</a></h3>
+    <p>Acompanha servidores e serviços e avisa quando algo sai do normal.</p>
+    <div class="course-meta">
+      <span class="chip">AGPLv3.</span>
+      <span class="chip">Portas 10051 e 10050</span>
+      <span class="chip pending">Em verificação</span>
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Infraestrutura como código</span>
+    <h3><a href="ferramenta-terraform.html">Terraform</a></h3>
+    <p>Descreve servidores e serviços de nuvem em arquivos de texto e cria tudo com um comando.</p>
+    <div class="course-meta">
+      <span class="chip">BUSL 1.1 (uso gratuito para estudo).</span>
+      <span class="chip">terraform init</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+    </div>
+  </section>
+  
+  <section class="section pt-0" aria-labelledby="grupo-dba">
+    <h2 id="grupo-dba" class="mb-3">Banco de dados (DBA)</h2>
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Banco relacional</span>
+    <h3><a href="ferramenta-postgresql.html">PostgreSQL</a></h3>
+    <p>Banco de dados relacional completo e muito usado em produção.</p>
+    <div class="course-meta">
+      <span class="chip">Licença PostgreSQL (livre).</span>
+      <span class="chip">Usuário postgres, porta 5432</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Banco relacional</span>
+    <h3><a href="ferramenta-mysql-community-server.html">MySQL Community Server</a></h3>
+    <p>Banco relacional muito usado em sites e aplicações web.</p>
+    <div class="course-meta">
+      <span class="chip">GPLv2.</span>
+      <span class="chip">Usuário root, porta 3306</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Banco NoSQL</span>
+    <h3><a href="ferramenta-mongodb-community-server.html">MongoDB Community Server</a></h3>
+    <p>Banco que guarda documentos parecidos com JSON, em vez de tabelas.</p>
+    <div class="course-meta">
+      <span class="chip">SSPL.</span>
+      <span class="chip">mongodb://localhost:27017</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Cliente SQL universal</span>
+    <h3><a href="ferramenta-dbeaver-community.html">DBeaver Community</a></h3>
+    <p>Uma só tela para conectar em PostgreSQL, MySQL, SQLite, Oracle e SQL Server.</p>
+    <div class="course-meta">
+      <span class="chip">Apache 2.0.</span>
+      <span class="chip">Driver JDBC automático</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Interface do PostgreSQL</span>
+    <h3><a href="ferramenta-pgadmin-4.html">pgAdmin 4</a></h3>
+    <p>Interface oficial para administrar o PostgreSQL e rodar consultas.</p>
+    <div class="course-meta">
+      <span class="chip">Licença PostgreSQL (livre).</span>
+      <span class="chip">Servidor localhost:5432</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Interface do MySQL</span>
+    <h3><a href="ferramenta-mysql-workbench.html">MySQL Workbench</a></h3>
+    <p>Administra o MySQL, roda consultas e gera tabelas a partir de diagramas.</p>
+    <div class="course-meta">
+      <span class="chip">GPLv2.</span>
+      <span class="chip">Database, Forward Engineer</span>
+      
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Modelagem conceitual</span>
+    <h3><a href="ferramenta-brmodelo.html">brModelo</a></h3>
+    <p>Ferramenta acadêmica em português para desenhar o modelo conceitual (MER) e o modelo lógico.</p>
+    <div class="course-meta">
+      <span class="chip">Gratuito. Confira a licença na página.</span>
+      <span class="chip">Arquivo .jar</span>
+      <span class="chip pending">Em verificação</span>
+    </div>
+  </div>
+</article>
+</div><div class="col-md-6 col-xl-4"><article class="course-card tool-card" style="--area:#4F73D9">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">Modelagem online</span>
+    <h3><a href="ferramenta-dbdiagramio.html">dbdiagram.io</a></h3>
+    <p>Desenha o banco escrevendo texto (DBML) e gera o diagrama na hora, com exportação do script SQL.</p>
+    <div class="course-meta">
+      <span class="chip">Plano gratuito com limites.</span>
+      <span class="chip">Ref: a.b &gt; c.d</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+    </div>
+  </section>
+  
+  <p class="credit">Lista e primeira versão dos guias: portais da equipe do projeto (Infra e DBA, UX/UI e Mobile). Os guias foram revisados contra os sites oficiais.</p>
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly reúne cursos e guias gratuitos de tecnologia. Cada link é aberto pela equipe antes de entrar, e a data da conferência aparece em cada curso.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" style="color:var(--shelf-ink)" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly
+</a>
+
+<h2 class="side-title">Áreas de TI</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ux.html" style="--area:#E0527F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">UX/UI Design</span>
+      <span class="side-count"><span class="visually-hidden">9 cursos</span><span aria-hidden="true">9</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-front.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Front-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-back.html" style="--area:#2E9E6F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Back-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-mobile.html" style="--area:#8C63E0">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Mobile</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-po.html" style="--area:#EB6A34">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">PO / Gestão de Produto</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-qa.html" style="--area:#1AA1C9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">QA / Testes de Software</span>
+      <span class="side-count"><span class="visually-hidden">4 cursos</span><span aria-hidden="true">4</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-infra.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Infraestrutura + DBA</span>
+      <span class="side-count"><span class="visually-hidden">16 cursos</span><span aria-hidden="true">16</span></span>
+    </a>
+  </li>
+  
+</ul>
+
+<h2 class="side-title">Para praticar</h2>
+<ul class="side-nav">
+  <li>
+    <a class="side-link" href="guias.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Guias e roteiros</span>
+      <span class="side-count"><span class="visually-hidden">5 guias</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  <li>
+    <a class="side-link" href="ferramentas.html" style="--area:#4F73D9" aria-current="page">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Ferramentas e instalação</span>
+      <span class="side-count"><span class="visually-hidden">23 ferramentas</span><span aria-hidden="true">23</span></span>
+    </a>
+  </li>
+</ul>
+
+<h2 class="side-title">Outras áreas</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ia.html" style="--area:#6B7A90">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Inteligência Artificial</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-idiomas.html" style="--area:#B08A3E">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Idiomas</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="cursos.html" style="--area:#A9B4CA">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Todos os cursos</span>
+      <span class="side-count"><span class="visually-hidden">53 cursos</span><span aria-hidden="true">53</span></span>
+    </a>
+  </li>
+</ul>
+
+<div class="side-foot"><p style="color:var(--shelf-soft);font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

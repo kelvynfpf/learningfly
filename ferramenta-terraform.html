@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terraform: instalação | LearningFly</title>
+  <meta name="description" content="Descreve servidores e serviços de nuvem em arquivos de texto e cria tudo com um comando.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" style="color:var(--shelf-ink)" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly
+</a>
+
+<h2 class="side-title">Áreas de TI</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ux.html" style="--area:#E0527F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">UX/UI Design</span>
+      <span class="side-count"><span class="visually-hidden">9 cursos</span><span aria-hidden="true">9</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-front.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Front-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-back.html" style="--area:#2E9E6F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Back-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-mobile.html" style="--area:#8C63E0">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Mobile</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-po.html" style="--area:#EB6A34">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">PO / Gestão de Produto</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-qa.html" style="--area:#1AA1C9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">QA / Testes de Software</span>
+      <span class="side-count"><span class="visually-hidden">4 cursos</span><span aria-hidden="true">4</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-infra.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Infraestrutura + DBA</span>
+      <span class="side-count"><span class="visually-hidden">16 cursos</span><span aria-hidden="true">16</span></span>
+    </a>
+  </li>
+  
+</ul>
+
+<h2 class="side-title">Para praticar</h2>
+<ul class="side-nav">
+  <li>
+    <a class="side-link" href="guias.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Guias e roteiros</span>
+      <span class="side-count"><span class="visually-hidden">5 guias</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  <li>
+    <a class="side-link" href="ferramentas.html" style="--area:#4F73D9" aria-current="page">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Ferramentas e instalação</span>
+      <span class="side-count"><span class="visually-hidden">23 ferramentas</span><span aria-hidden="true">23</span></span>
+    </a>
+  </li>
+</ul>
+
+<h2 class="side-title">Outras áreas</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ia.html" style="--area:#6B7A90">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Inteligência Artificial</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-idiomas.html" style="--area:#B08A3E">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Idiomas</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="cursos.html" style="--area:#A9B4CA">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Todos os cursos</span>
+      <span class="side-count"><span class="visually-hidden">53 cursos</span><span aria-hidden="true">53</span></span>
+    </a>
+  </li>
+</ul>
+
+<div class="side-foot"><p style="color:var(--shelf-soft);font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<div class="page" style="--area:#4F73D9;--on:#FFFFFF">
+  <a class="crumb" href="ferramentas.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Ferramentas e instalação</a>
+
+  <div class="tool-head">
+    <span class="area-tag">Infraestrutura como código</span>
+    <h1>Terraform</h1>
+    <p class="lead">Descreve servidores e serviços de nuvem em arquivos de texto e cria tudo com um comando.</p>
+
+    <dl class="facts">
+      <div><dt>Licença</dt><dd>BUSL 1.1 (uso gratuito para estudo).</dd></div>
+      <div><dt>Requisito</dt><dd>Programa acessível no PATH.</dd></div>
+      <div><dt>Para lembrar</dt><dd>terraform init</dd></div>
+    </dl>
+
+    
+      <p class="note">Link conferido pela equipe em 17/11/2026.</p>
+    
+    <a class="btn btn-primary" href="https://developer.hashicorp.com/terraform/install" target="_blank" rel="noopener noreferrer">Abrir o site oficial <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (abre em outra aba)</span></a>
+  </div>
+
+  <section class="section" aria-labelledby="passos">
+    <h2 id="passos" class="mb-3">Como instalar e testar</h2>
+    <ol class="steps">
+      
+      <li>
+        <h3>Windows</h3>
+        <p>Baixe o arquivo .zip na página oficial, extraia terraform.exe em uma pasta (por exemplo C:\Terraform) e adicione a pasta ao PATH.</p>
+        
+      </li>
+      
+      <li>
+        <h3>Linux (Ubuntu/Debian)</h3>
+        <p>A HashiCorp tem um repositório próprio. Siga os comandos da aba Linux da página oficial. <a class="text-link" href="https://developer.hashicorp.com/terraform/install" target="_blank" rel="noopener noreferrer">Guia oficial<span class="visually-hidden"> (abre em outra aba)</span></a></p>
+        
+      </li>
+      
+      <li>
+        <h3>Testar</h3>
+        <p>Crie uma pasta com um arquivo main.tf e rode:</p>
+        <div class="code-wrap"><pre tabindex="0"><code>terraform version
+terraform init
+terraform plan</code></pre><button type="button" class="btn btn-outline copy-btn" data-copy>Copiar</button></div>
+      </li>
+      
+    </ol>
+    <p class="note mt-4"><strong>Atenção.</strong> Se preferir uma opção com licença aberta, o OpenTofu é compatível com a maioria dos arquivos.</p>
+  </section>
+</div>
+<script>
+  document.querySelectorAll("[data-copy]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var t = b.parentNode.querySelector("code").innerText;
+      if (navigator.clipboard) navigator.clipboard.writeText(t).then(function () { b.textContent = "Copiado"; setTimeout(function () { b.textContent = "Copiar"; }, 1800); });
+    });
+  });
+</script>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly reúne cursos e guias gratuitos de tecnologia. Cada link é aberto pela equipe antes de entrar, e a data da conferência aparece em cada curso.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" style="color:var(--shelf-ink)" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly
+</a>
+
+<h2 class="side-title">Áreas de TI</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ux.html" style="--area:#E0527F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">UX/UI Design</span>
+      <span class="side-count"><span class="visually-hidden">9 cursos</span><span aria-hidden="true">9</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-front.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Front-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-back.html" style="--area:#2E9E6F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Back-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-mobile.html" style="--area:#8C63E0">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Mobile</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-po.html" style="--area:#EB6A34">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">PO / Gestão de Produto</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-qa.html" style="--area:#1AA1C9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">QA / Testes de Software</span>
+      <span class="side-count"><span class="visually-hidden">4 cursos</span><span aria-hidden="true">4</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-infra.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Infraestrutura + DBA</span>
+      <span class="side-count"><span class="visually-hidden">16 cursos</span><span aria-hidden="true">16</span></span>
+    </a>
+  </li>
+  
+</ul>
+
+<h2 class="side-title">Para praticar</h2>
+<ul class="side-nav">
+  <li>
+    <a class="side-link" href="guias.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Guias e roteiros</span>
+      <span class="side-count"><span class="visually-hidden">5 guias</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  <li>
+    <a class="side-link" href="ferramentas.html" style="--area:#4F73D9" aria-current="page">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Ferramentas e instalação</span>
+      <span class="side-count"><span class="visually-hidden">23 ferramentas</span><span aria-hidden="true">23</span></span>
+    </a>
+  </li>
+</ul>
+
+<h2 class="side-title">Outras áreas</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ia.html" style="--area:#6B7A90">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Inteligência Artificial</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-idiomas.html" style="--area:#B08A3E">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Idiomas</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="cursos.html" style="--area:#A9B4CA">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Todos os cursos</span>
+      <span class="side-count"><span class="visually-hidden">53 cursos</span><span aria-hidden="true">53</span></span>
+    </a>
+  </li>
+</ul>
+
+<div class="side-foot"><p style="color:var(--shelf-soft);font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
