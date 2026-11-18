@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introdução à Análise de Dados: Microsoft Power BI | LearningFly</title>
+  <meta name="description" content="Curso de 5 horas sem pré-requisitos: o que é análise de dados, o que faz um analista e os primeiros passos no Power BI.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F" aria-current="page"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<div class="page" style="--area:#6F8A1F;--on:#19223A">
+  <a class="crumb" href="area-dados.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Dados e BI</a>
+
+  <div class="course-head">
+    <div>
+      <span class="area-tag">Dados e BI</span>
+      <h1>Introdução à Análise de Dados: Microsoft Power BI</h1>
+      <p class="lead">Curso de 5 horas sem pré-requisitos: o que é análise de dados, o que faz um analista e os primeiros passos no Power BI.</p>
+
+      <dl class="facts">
+        <div><dt>Fonte</dt><dd>Fundação Bradesco (Escola Virtual)</dd></div>
+        <div><dt>Idioma</dt><dd>Português</dd></div>
+        <div><dt>Nível</dt><dd>Iniciante</dd></div>
+        <div><dt>Etapas</dt><dd>8</dd></div>
+      </dl>
+
+      <p class="note"><strong>Sobre o custo.</strong> Gratuito com cadastro na Escola Virtual. Certificado digital grátis para quem tirar 70% ou mais na avaliação final. Idade mínima: 16 anos.</p>
+      
+        
+          <p class="note">Link conferido pela equipe em 18/11/2026.</p>
+        
+        <a class="btn btn-primary" href="https://www.ev.org.br/cursos/introducao-a-analise-de-dados-microsoft-power-bi" target="_blank" rel="noopener noreferrer">Acessar o curso <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i><span class="visually-hidden"> (abre em outra aba)</span></a>
+      
+    </div>
+
+    <aside class="panel" aria-label="Seu progresso">
+      <div class="d-flex justify-content-between"><strong>Seu progresso</strong><strong>0%</strong></div>
+      <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso no curso"><div class="progress-fill" style="width:0%"></div></div>
+      <small class="text-secondary">0 de 8 etapas concluídas</small>
+      
+        
+      
+    </aside>
+  </div>
+
+  <section class="section pt-0" aria-labelledby="etapas">
+    <h2 id="etapas" class="mb-3">Etapas do curso</h2>
+    <ol class="lesson-list">
+      
+      <li>
+        <a class="lesson-row " href="aula-256.html">
+          <span class="lesson-num" aria-hidden="true">1</span>
+          <span><strong>Dados e informação</strong><small>A diferença entre os dois.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-257.html">
+          <span class="lesson-num" aria-hidden="true">2</span>
+          <span><strong>Panorama da análise de dados</strong><small>Para que serve e onde é usada.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-258.html">
+          <span class="lesson-num" aria-hidden="true">3</span>
+          <span><strong>Categorias de análise</strong><small>Os tipos de pergunta que a análise responde.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-259.html">
+          <span class="lesson-num" aria-hidden="true">4</span>
+          <span><strong>Funções no trabalho com dados</strong><small>Quem faz o quê.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-260.html">
+          <span class="lesson-num" aria-hidden="true">5</span>
+          <span><strong>Atividades do analista</strong><small>A rotina de quem analisa dados.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-261.html">
+          <span class="lesson-num" aria-hidden="true">6</span>
+          <span><strong>Introdução ao Power BI</strong><small>Primeiro contato com a ferramenta.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-262.html">
+          <span class="lesson-num" aria-hidden="true">7</span>
+          <span><strong>Componentes do Power BI</strong><small>Desktop, relatórios e painéis.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="lesson-row " href="aula-263.html">
+          <span class="lesson-num" aria-hidden="true">8</span>
+          <span><strong>Serviço Power BI</strong><small>Publicar e compartilhar.</small></span>
+          <span class="lesson-go"><i class="bi bi-chevron-right" aria-hidden="true"></i></span>
+        </a>
+      </li>
+      
+    </ol>
+  </section>
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly: por onde começar em tecnologia, com aulas próprias e cursos gratuitos conferidos pela equipe.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>learningfly
+</a>
+
+<p class="side-title">Escolha uma área</p>
+<ul class="side-nav" aria-label="Áreas">
+  
+  <li><a class="side-link" href="area-ux.html" style="--area:#E0527F"><span class="dot" aria-hidden="true"></span>UX Design</a></li>
+  
+  <li><a class="side-link" href="area-ui.html" style="--area:#C2569B"><span class="dot" aria-hidden="true"></span>UI Design</a></li>
+  
+  <li><a class="side-link" href="area-front.html" style="--area:#E8A317"><span class="dot" aria-hidden="true"></span>Front-end</a></li>
+  
+  <li><a class="side-link" href="area-back.html" style="--area:#2E9E6F"><span class="dot" aria-hidden="true"></span>Back-end</a></li>
+  
+  <li><a class="side-link" href="area-mobile.html" style="--area:#8C63E0"><span class="dot" aria-hidden="true"></span>Mobile</a></li>
+  
+  <li><a class="side-link" href="area-dados.html" style="--area:#6F8A1F" aria-current="page"><span class="dot" aria-hidden="true"></span>Dados e BI</a></li>
+  
+  <li><a class="side-link" href="area-po.html" style="--area:#EB6A34"><span class="dot" aria-hidden="true"></span>PO / Gestão de Produto</a></li>
+  
+  <li><a class="side-link" href="area-qa.html" style="--area:#1AA1C9"><span class="dot" aria-hidden="true"></span>QA / Testes de Software</a></li>
+  
+  <li><a class="side-link" href="area-infra.html" style="--area:#4F73D9"><span class="dot" aria-hidden="true"></span>Infraestrutura + DBA</a></li>
+  
+  <li><a class="side-link" href="area-seguranca.html" style="--area:#CF4040"><span class="dot" aria-hidden="true"></span>Segurança da Informação</a></li>
+  
+  <li><a class="side-link" href="area-suporte.html" style="--area:#8A6A52"><span class="dot" aria-hidden="true"></span>Suporte técnico</a></li>
+  
+  
+</ul>
+
+
+<p class="side-title">Para consultar</p>
+<ul class="side-nav" aria-label="Para consultar">
+  <li><a class="side-link plain" href="cursos.html">Todos os cursos</a></li>
+  <li><a class="side-link plain" href="guias.html">Guias e roteiros</a></li>
+  <li><a class="side-link plain" href="ferramentas.html">Ferramentas</a></li>
+</ul>
+
+
+<div class="side-foot"><p class="muted" style="font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
