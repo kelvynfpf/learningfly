@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UX/UI Design | LearningFly</title>
+  <meta name="description" content="Cursos gratuitos de tecnologia, organizados por área e conferidos pela equipe.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='10' width='5' height='18' rx='1.5' fill='%23E0527F'/%3E%3Crect x='12' y='4' width='5' height='24' rx='1.5' fill='%23E8A317'/%3E%3Crect x='19' y='13' width='5' height='15' rx='1.5' fill='%231AA1C9'/%3E%3C/svg%3E">
+  <script>
+    /* Segue o tema claro ou escuro do aparelho. */
+    (function () {
+      var m = window.matchMedia("(prefers-color-scheme: dark)");
+      function aplicar() { document.documentElement.setAttribute("data-bs-theme", m.matches ? "dark" : "light"); }
+      aplicar();
+      if (m.addEventListener) m.addEventListener("change", aplicar);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="app">
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="shell">
+  
+    <aside class="sidebar" aria-label="Áreas de estudo">
+      <a class="brand" href="index.html" style="color:var(--shelf-ink)" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly
+</a>
+
+<h2 class="side-title">Áreas de TI</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ux.html" style="--area:#E0527F" aria-current="page">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">UX/UI Design</span>
+      <span class="side-count"><span class="visually-hidden">9 cursos</span><span aria-hidden="true">9</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-front.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Front-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-back.html" style="--area:#2E9E6F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Back-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-mobile.html" style="--area:#8C63E0">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Mobile</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-po.html" style="--area:#EB6A34">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">PO / Gestão de Produto</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-qa.html" style="--area:#1AA1C9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">QA / Testes de Software</span>
+      <span class="side-count"><span class="visually-hidden">4 cursos</span><span aria-hidden="true">4</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-infra.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Infraestrutura + DBA</span>
+      <span class="side-count"><span class="visually-hidden">16 cursos</span><span aria-hidden="true">16</span></span>
+    </a>
+  </li>
+  
+</ul>
+
+<h2 class="side-title">Para praticar</h2>
+<ul class="side-nav">
+  <li>
+    <a class="side-link" href="guias.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Guias e roteiros</span>
+      <span class="side-count"><span class="visually-hidden">5 guias</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  <li>
+    <a class="side-link" href="ferramentas.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Ferramentas e instalação</span>
+      <span class="side-count"><span class="visually-hidden">23 ferramentas</span><span aria-hidden="true">23</span></span>
+    </a>
+  </li>
+</ul>
+
+<h2 class="side-title">Outras áreas</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ia.html" style="--area:#6B7A90">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Inteligência Artificial</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-idiomas.html" style="--area:#B08A3E">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Idiomas</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="cursos.html" style="--area:#A9B4CA">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Todos os cursos</span>
+      <span class="side-count"><span class="visually-hidden">53 cursos</span><span aria-hidden="true">53</span></span>
+    </a>
+  </li>
+</ul>
+
+<div class="side-foot"><p style="color:var(--shelf-soft);font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+    </aside>
+  
+
+  <div class="main-col">
+    
+    <header class="topbar">
+      <div class="page topbar-inner">
+        <button class="btn btn-outline menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#gaveta" aria-controls="gaveta">
+          <i class="bi bi-list" aria-hidden="true"></i> Áreas
+        </button>
+        <a class="brand" href="index.html" aria-label="LearningFly, página inicial"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly</a>
+        <div class="topbar-search"></div>
+        <div class="topbar-actions"><span class="chip">Versão de demonstração</span></div>
+      </div>
+    </header>
+    
+
+    <main id="conteudo">
+      
+      
+<div class="page" style="--area:#E0527F;--on:#19223A">
+  <header class="page-head">
+    <span class="area-icon" aria-hidden="true"><i class="bi bi-vector-pen"></i></span>
+    <h1>UX/UI Design</h1>
+    <p>Usabilidade, interface, acessibilidade e prototipagem.</p>
+  </header>
+
+  
+  <div class="extras">
+    
+    <aside class="tools-banner" aria-labelledby="guias-area">
+      <div>
+        <h2 id="guias-area">Guias e roteiros</h2>
+        <ul class="plain-list"><li><a class="text-link" href="guia-por-onde-comecar-em-uxui.html">Por onde começar em UX/UI</a></li><li><a class="text-link" href="guia-checklist-de-entrega-de-ui-e-handoff.html">Checklist de entrega de UI e handoff</a></li><li><a class="text-link" href="guia-pesquisa-com-usuario-csd-entrevistas-e-testes.html">Pesquisa com usuário: CSD, entrevistas e testes</a></li></ul>
+      </div>
+      <a class="btn btn-primary" href="guia-por-onde-comecar-em-uxui.html">Começar por aqui</a>
+    </aside>
+    
+    
+    <aside class="tools-banner" aria-labelledby="ferr">
+      <div>
+        <h2 id="ferr">Ferramentas e guias de instalação</h2>
+        <p>2 ferramentas gratuitas desta área, com passos para instalar e testar.</p>
+      </div>
+      <a class="btn btn-outline" href="/ferramentas/#grupo-ux">Ver ferramentas</a>
+    </aside>
+    
+  </div>
+  
+
+  <div class="section pt-0">
+    <div class="row g-3">
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-10-heuristicas-de-usabilidade.html">10 heurísticas de usabilidade</a></h3>
+    <p>O artigo de referência para avaliar uma interface. As dez regras servem para revisar uma tela sozinho, sem precisar de teste com usuários.</p>
+    <div class="course-meta">
+      <span class="chip">Inglês</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">10 etapas</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-laws-of-ux.html">Laws of UX</a></h3>
+    <p>Coleção de princípios de psicologia aplicados ao design de interfaces, cada um em uma página curta com exemplo.</p>
+    <div class="course-meta">
+      <span class="chip">Inglês</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">4 etapas</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-figma-design-para-iniciantes.html">Figma Design para iniciantes</a></h3>
+    <p>Curso do próprio Figma, feito em torno de um projeto prático: criar um site de portfólio do zero.</p>
+    <div class="course-meta">
+      <span class="chip">Inglês</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">6 etapas</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-checklist-de-acessibilidade.html">Checklist de acessibilidade</a></h3>
+    <p>Lista de verificação baseada na WCAG para testar sites e aplicativos. Cada item explica o que olhar e por quê.</p>
+    <div class="course-meta">
+      <span class="chip">Inglês</span>
+      <span class="chip">Intermediário</span>
+      <span class="chip">7 etapas</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-material-design-3.html">Material Design 3</a></h3>
+    <p>Sistema de design do Google, com orientações de UX, componentes e ferramentas. Útil para entender como um sistema de design é organizado.</p>
+    <div class="course-meta">
+      <span class="chip">Inglês</span>
+      <span class="chip">Intermediário</span>
+      <span class="chip">3 etapas</span>
+      <span class="chip pending">Em verificação</span>
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-roteiro-de-ui-design-techguide.html">Roteiro de UI Design (TechGuide)</a></h3>
+    <p>Mapa de carreira de UI Design em três níveis, feito pela Alura. Serve para saber o que estudar primeiro e o que vem depois.</p>
+    <div class="course-meta">
+      <span class="chip">Português</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">3 etapas</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-arquitetura-da-informacao-aprenda-a-organizar-conteudos.html">Arquitetura da informação: aprenda a organizar conteúdos</a></h3>
+    <p>Guia completo sobre como organizar o conteúdo e a navegação de um produto digital para a experiência ficar compreensível.</p>
+    <div class="course-meta">
+      <span class="chip">Português</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">3 etapas</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-jornada-do-usuario-em-service-design.html">Jornada do usuário em Service Design</a></h3>
+    <p>Artigo sobre a sequência de interações e sensações da pessoa, do primeiro contato até a retenção, e sobre os momentos que ficam na memória.</p>
+    <div class="course-meta">
+      <span class="chip">Português</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">1 etapa</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      <div class="col-md-6 col-xl-4"><article class="course-card" style="--area:#E0527F">
+  <div class="spine-edge" aria-hidden="true"></div>
+  <div class="course-body">
+    <span class="area-tag">UX/UI Design</span>
+    <h3><a href="curso-acessibilidade-na-web-principais-conceitos.html">Acessibilidade na web: principais conceitos</a></h3>
+    <p>Artigo introdutório sobre por que a acessibilidade importa para a internet e quantas pessoas ela alcança.</p>
+    <div class="course-meta">
+      <span class="chip">Português</span>
+      <span class="chip">Iniciante</span>
+      <span class="chip">1 etapa</span>
+      
+    </div>
+  </div>
+</article>
+</div>
+      
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="page">
+        <p>LearningFly reúne cursos e guias gratuitos de tecnologia. Cada link é aberto pela equipe antes de entrar, e a data da conferência aparece em cada curso.</p>
+        <p>Esta é uma versão de demonstração, só para leitura. Preços e limites de planos gratuitos mudam. Se algo estiver fora do ar ou pago, avise a equipe.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<div class="offcanvas offcanvas-start shelf-drawer" tabindex="-1" id="gaveta" aria-labelledby="gaveta-titulo">
+  <button type="button" class="btn-close btn-close-white drawer-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+  <span id="gaveta-titulo" class="visually-hidden">Áreas de estudo</span>
+  <nav class="sidebar" aria-label="Áreas de estudo (menu)">
+    <a class="brand" href="index.html" style="color:var(--shelf-ink)" aria-label="LearningFly, página inicial">
+  <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>learningfly
+</a>
+
+<h2 class="side-title">Áreas de TI</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ux.html" style="--area:#E0527F" aria-current="page">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">UX/UI Design</span>
+      <span class="side-count"><span class="visually-hidden">9 cursos</span><span aria-hidden="true">9</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-front.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Front-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-back.html" style="--area:#2E9E6F">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Back-end</span>
+      <span class="side-count"><span class="visually-hidden">7 cursos</span><span aria-hidden="true">7</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-mobile.html" style="--area:#8C63E0">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Mobile</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-po.html" style="--area:#EB6A34">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">PO / Gestão de Produto</span>
+      <span class="side-count"><span class="visually-hidden">5 cursos</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-qa.html" style="--area:#1AA1C9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">QA / Testes de Software</span>
+      <span class="side-count"><span class="visually-hidden">4 cursos</span><span aria-hidden="true">4</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-infra.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Infraestrutura + DBA</span>
+      <span class="side-count"><span class="visually-hidden">16 cursos</span><span aria-hidden="true">16</span></span>
+    </a>
+  </li>
+  
+</ul>
+
+<h2 class="side-title">Para praticar</h2>
+<ul class="side-nav">
+  <li>
+    <a class="side-link" href="guias.html" style="--area:#E8A317">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Guias e roteiros</span>
+      <span class="side-count"><span class="visually-hidden">5 guias</span><span aria-hidden="true">5</span></span>
+    </a>
+  </li>
+  <li>
+    <a class="side-link" href="ferramentas.html" style="--area:#4F73D9">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Ferramentas e instalação</span>
+      <span class="side-count"><span class="visually-hidden">23 ferramentas</span><span aria-hidden="true">23</span></span>
+    </a>
+  </li>
+</ul>
+
+<h2 class="side-title">Outras áreas</h2>
+<ul class="side-nav">
+  
+  <li>
+    <a class="side-link" href="area-ia.html" style="--area:#6B7A90">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Inteligência Artificial</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="area-idiomas.html" style="--area:#B08A3E">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Idiomas</span>
+      <span class="side-count"><span class="visually-hidden">0 cursos</span><span aria-hidden="true">0</span></span>
+    </a>
+  </li>
+  
+  <li>
+    <a class="side-link" href="cursos.html" style="--area:#A9B4CA">
+      <span class="side-spine" aria-hidden="true"></span>
+      <span class="side-name">Todos os cursos</span>
+      <span class="side-count"><span class="visually-hidden">53 cursos</span><span aria-hidden="true">53</span></span>
+    </a>
+  </li>
+</ul>
+
+<div class="side-foot"><p style="color:var(--shelf-soft);font-size:.9rem;margin:0">Versão de demonstração, só para leitura. Conta, favoritos e progresso funcionam na versão Django.</p></div>
+
+  </nav>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
