@@ -114,6 +114,106 @@
       
 
       
+<section class="notes" aria-labelledby="t-notas" data-notes="notas-etapa-5">
+  <div class="notes-head">
+    <h2 id="t-notas">Suas anotações</h2>
+    <span class="notes-status muted" aria-live="polite"></span>
+  </div>
+  <p class="muted">Escreva enquanto estuda. Uma ideia por linha. Termine a linha com “?” para marcar uma dúvida. Fica salvo só neste navegador.</p>
+  <label class="visually-hidden" for="notas-notas-etapa-5">Anotações sobre Prevenção de erros</label>
+  <textarea id="notas-notas-etapa-5" class="notes-text" rows="7" placeholder="Ex.: WHERE filtra as linhas antes de agrupar&#10;Qual a diferença entre WHERE e HAVING?"></textarea>
+  <div class="notes-actions">
+    <button type="button" class="btn btn-primary" data-notes-done>Concluí: gerar resumo</button>
+    <button type="button" class="btn btn-outline" data-notes-copy>Copiar tudo</button>
+    <button type="button" class="btn btn-link notes-clear" data-notes-clear>Apagar anotações</button>
+  </div>
+  <div class="notes-summary" hidden>
+    <h3>Resumo da aula</h3>
+    <div class="notes-summary-body"></div>
+  </div>
+  <script id="notas-etapa-5" type="application/json">["Preven\u00e7\u00e3o de erros"]</script>
+</section>
+<script>
+(function () {
+  var box = document.querySelector('[data-notes="notas\u002Detapa\u002D5"]');
+  if (!box || box.dataset.ready) return;
+  box.dataset.ready = "1";
+  var key = "lf-notas-" + box.dataset.notes;
+  var title = "Prevenção de erros";
+  var points = JSON.parse(document.getElementById(box.dataset.notes).textContent || "[]");
+  var text = box.querySelector(".notes-text");
+  var status = box.querySelector(".notes-status");
+  var summary = box.querySelector(".notes-summary");
+  var body = box.querySelector(".notes-summary-body");
+  var timer;
+
+  function load(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } }
+  function save(k, v) { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
+
+  text.value = load(key);
+  text.addEventListener("input", function () {
+    clearTimeout(timer);
+    timer = setTimeout(function () { status.textContent = save(key, text.value) ? "Salvo" : "Não foi possível salvar neste navegador"; }, 400);
+  });
+
+  function lines() { return text.value.split("\n").map(function (l) { return l.trim(); }).filter(Boolean); }
+
+  function build() {
+    var all = lines();
+    var doubts = all.filter(function (l) { return /\?$/.test(l); });
+    var notes = all.filter(function (l) { return !/\?$/.test(l); });
+    var tips = [];
+    if (!all.length) tips.push("Você não escreveu nada desta vez. Tente anotar três ideias principais com suas palavras.");
+    if (notes.length && notes.length < 3) tips.push("Anote pelo menos três ideias principais. Escrever com suas palavras ajuda a lembrar.");
+    if (doubts.length) tips.push("Pesquise suas dúvidas hoje, enquanto a aula está fresca.");
+    tips.push("Revise este resumo amanhã e de novo daqui a uma semana.");
+    tips.push("Explique o assunto em voz alta para alguém, ou para você mesmo, sem olhar.");
+    return { notes: notes, doubts: doubts, tips: tips };
+  }
+
+  function asText(r) {
+    var out = ["Resumo: " + title, "Data: " + new Date().toLocaleDateString("pt-BR"), ""];
+    if (r.notes.length) { out.push("Minhas anotações:"); r.notes.forEach(function (n) { out.push("- " + n); }); out.push(""); }
+    if (r.doubts.length) { out.push("Dúvidas para pesquisar:"); r.doubts.forEach(function (n) { out.push("- " + n); }); out.push(""); }
+    if (points.length) { out.push("Tópicos da aula:"); points.forEach(function (n) { out.push("- " + n); }); out.push(""); }
+    out.push("Dicas:"); r.tips.forEach(function (n) { out.push("- " + n); });
+    return out.join("\n");
+  }
+
+  function list(heading, items) {
+    if (!items.length) return "";
+    var h = document.createElement("div");
+    var t = document.createElement("h4"); t.textContent = heading; h.appendChild(t);
+    var ul = document.createElement("ul");
+    items.forEach(function (i) { var li = document.createElement("li"); li.textContent = i; ul.appendChild(li); });
+    h.appendChild(ul);
+    return h;
+  }
+
+  box.querySelector("[data-notes-done]").addEventListener("click", function () {
+    var r = build();
+    body.innerHTML = "";
+    [list("Suas anotações", r.notes), list("Dúvidas para pesquisar", r.doubts), list("Tópicos da aula", points), list("Dicas", r.tips)]
+      .forEach(function (n) { if (n) body.appendChild(n); });
+    summary.hidden = false;
+    summary.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  box.querySelector("[data-notes-copy]").addEventListener("click", function () {
+    var b = this, content = asText(build());
+    function done(ok) { b.textContent = ok ? "Copiado" : "Não deu para copiar"; setTimeout(function () { b.textContent = "Copiar tudo"; }, 1800); }
+    if (navigator.clipboard) navigator.clipboard.writeText(content).then(function () { done(true); }, function () { done(false); });
+    else done(false);
+  });
+
+  box.querySelector("[data-notes-clear]").addEventListener("click", function () {
+    text.value = ""; save(key, ""); summary.hidden = true; status.textContent = "Anotações apagadas";
+  });
+})();
+</script>
+
+
+      
       
       
 
